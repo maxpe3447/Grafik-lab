@@ -1,0 +1,6 @@
+E:\Project of VS\Grafik_lab\Grafik_lab\Debug\Grafik_lab.vcxprojAssemblyReference.cache
+E:\Project of VS\Grafik_lab\Grafik_lab\Debug\Grafik_lab.vcxproj.GenerateResource.cache
+E:\Project of VS\Grafik_lab\Grafik_lab\Debug\Grafiklab.MyForm.resources
+E:\Project of VS\Grafik-lab\Grafik_lab\Debug\Grafik_lab.vcxprojAssemblyReference.cache
+E:\Project of VS\Grafik-lab\Grafik_lab\Debug\Grafiklab.MyForm.resources
+E:\Project of VS\Grafik-lab\Grafik_lab\Debug\Grafik_lab.vcxproj.GenerateResource.cache
