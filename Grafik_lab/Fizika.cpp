@@ -1,16 +1,16 @@
 #include "Fizika.h"
 
-void Phizics::Fizika::calc_C()//ìêÔ
+void Phizics::Fizika::calc_C()
 {
-	
+
 		C = std::rand() % 495 + 5;
 		C /= 100.0;
 		C *= pow(10, -6);
-	
+
 	//throw gcnew System::NotImplementedException();
 }
 
-void Phizics::Fizika::calc_L_zero()//ìÃí
+void Phizics::Fizika::calc_L_zero()//ï¿½ï¿½ï¿½
 {
 	L_zero = std::rand() % 100;
 
@@ -23,17 +23,17 @@ void Phizics::Fizika::calc_R()//Om
 	if (L / C < 0)
 		std::cout << "ERRor #1\n";
 	R_ = 2 * sqrt(L / C);
-	
+
 	R = R_ + 1;
 	for (int i = 0; i < 300; i++) {// do 300 iterations, if we cann't find the num - leave cycle(it should not be loop!!)
 
 		R = std::rand() % 90 + 5;
-		
 
-		if (R < R_) break; //R <R' stop the number search 
+
+		if (R < R_) break; //R <R' stop the number search
 	}
-	if (!R < R_) R = R_ - 1; // if( i == 300) and (R >R')? we should be make synthetic numbers (=> R' - 1) 
-	
+	if (!R < R_) R = R_ - 1; // if( i == 300) and (R >R')? we should be make synthetic numbers (=> R' - 1)
+
 
 	//throw gcnew System::NotImplementedException();
 }

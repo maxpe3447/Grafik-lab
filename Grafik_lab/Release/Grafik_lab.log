@@ -1,7 +1,1 @@
-﻿  MyForm.cpp
-E:\Project of VS\Grafik_lab\Grafik_lab\Fizika.h(51,24): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-E:\Project of VS\Grafik_lab\Grafik_lab\MyForm.h(210,1): warning C4091: '': ignored on left of 'wchar_t' when no variable is declared
-E:\Project of VS\Grafik_lab\Grafik_lab\MyForm.h(219,23): warning C4018: '<=': signed/unsigned mismatch
-E:\Project of VS\Grafik_lab\Grafik_lab\MyForm.h(267,23): warning C4018: '<=': signed/unsigned mismatch
-  Fizika.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
-  Grafik_lab.vcxproj -> E:\Project of VS\Grafik_lab\Release\Grafik_lab.exe
+﻿  Grafik_lab.vcxproj -> E:\Project of VS\Grafik-lab\Release\Grafik_lab.exe

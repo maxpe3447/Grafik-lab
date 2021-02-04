@@ -1,1 +1,9 @@
-﻿  Grafik_lab.vcxproj -> E:\Project of VS\Grafik-lab\Debug\Grafik_lab.exe
+﻿  MyForm.cpp
+E:\Project of VS\Grafik-lab\Grafik_lab\Fizika.h(52,24): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+E:\Project of VS\Grafik-lab\Grafik_lab\MyForm.h(209,13): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+E:\Project of VS\Grafik-lab\Grafik_lab\MyForm.h(210,15): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+E:\Project of VS\Grafik-lab\Grafik_lab\MyForm.h(212,25): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+E:\Project of VS\Grafik-lab\Grafik_lab\MyForm.h(234,23): warning C4018: '<=': signed/unsigned mismatch
+E:\Project of VS\Grafik-lab\Grafik_lab\MyForm.h(291,23): warning C4018: '<=': signed/unsigned mismatch
+  Fizika.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
+  Grafik_lab.vcxproj -> E:\Project of VS\Grafik-lab\Debug\Grafik_lab.exe

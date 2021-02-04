@@ -3,6 +3,7 @@
 #include <cmath>
 #include <cstdlib>
 #include <ctime>
+#include <iomanip>
 
 //#define DEBUG_ALL_XY //has no definition
 #define DEBUG_XY

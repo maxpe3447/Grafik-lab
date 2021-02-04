@@ -1,5 +1,8 @@
 #pragma once
 #include "Fizika.h"
+
+//#define time_error
+
 namespace Grafiklab {
 
 	using namespace System;
@@ -196,45 +199,63 @@ namespace Grafiklab {
 #pragma endregion
 
 		typedef Phizics::Fizika Phiz;
+
 		const int T_max = 5; // numbers of periods
+
 	private: System::Void chart1_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+
+	float error_time(float k) {
+		float end = (k * 1000) * 0.3;
+		float start = (k * 1000) * 0.05;
+		int result = (std::rand() % (int(end) - int(start)) + int(start));
+		return /*k +*/ result / 1000.0;
 	}
 
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 	chart1->Series["Grafik"]->Points->Clear(); //Series 1
 	chart1->Titles->Clear();
 	chart1->Titles->Add(L"Вариант 1");
+
+#ifdef DEBUG_XY
 	system("cls");
+#endif // DEBUG_XY
 
 	Phizics::Fizika obj;
-	wchar_t;
+
 #ifdef DEBUG_XY
 	std::cout << "Variant 1" << std::endl;
-	std::cout << "X\tY\n";
+	std::cout << "X\tY\t\tError\n";
 #endif // DEBUG_XY
 
 
 	float k{};
-
+	float k_{};
 	for (size_t i = 1; i <= T_max; i++) { //number of periods(5)
 
 		for (k; k < 0.1 * i; k += float(0.02)) {
+
+#ifdef time_error
+			if (k)
+				k_ = error_time(k);
+#endif // time_error
+
 			obj.for_rand();
-			obj.set_t(T_max * k);
+			obj.set_t(T_max * k+k_);
 			obj.set_code(Phiz::TASK_1);
 
 			double y = obj.Y_U_calc();
 
-			chart1->Series["Grafik"]->Points->AddXY(k, y);
+			chart1->Series["Grafik"]->Points->AddXY(k+k_, y);
 
 #ifdef DEBUG_XY
-			std::cout << k << "\t" << y << std::endl;
+			std::cout << k+k_ << "\t" << y<< std::setw(4) <<"\t" << k_ << std::endl;
 #endif // DEBUG_XY
 
 		}
 
 #ifdef DEBUG_XY
-		std::cout << k << '\t' << i << '\n' << "<--------->\n";
+		std::cout << k_+k << '\t' << i << '\n' << "<--------->\n";
 #endif // DEBUG_XY
 
 	}
@@ -247,11 +268,14 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	chart1->ChartAreas[0]->AxisY->MajorGrid->Interval = 0.5;	//additional line by Y
 }
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+
 	chart1->Series["Grafik"]->Points->Clear();//Series1
 	chart1->Titles->Clear();
 	chart1->Titles->Add(L"Вариант 2");
 
+#ifdef DEBUG_XY
 	system("cls");
+#endif // DEBUG_XY
 
 	Phizics::Fizika obj;
 
