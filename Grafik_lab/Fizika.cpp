@@ -98,3 +98,13 @@ double Phizics::Fizika::Y_U_calc()
 	U = U_zero * exp(-8 * t) * cos(W * t);
 	return U;
 }
+
+double Phizics::Fizika::error_time(double k)
+{
+	double end = (k * 1000) * 0.2;
+	std::cout << "\n\\\\\\\\" << end << "////\n";
+	double start = (k * 1000) * 0.05;
+	int result = std::rand() % int(end);
+	//int result = (std::rand() % (int(end) - int(start)) + int(start));
+	return /*k +*/ result / 1000.0;
+}

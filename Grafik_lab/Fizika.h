@@ -64,5 +64,6 @@ namespace Phizics {
 		void set_code(short code);
 
 		double Y_U_calc();
+		static double error_time(double k); 
 	};
 }

@@ -1,1 +1,10 @@
-﻿  Grafik_lab.vcxproj -> E:\Project of VS\Grafik-lab\Release\Grafik_lab.exe
+﻿  Fizika.cpp
+E:\Project of VS\Grafik-lab\Grafik_lab\Fizika.h(52,24): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+E:\Project of VS\Grafik-lab\Grafik_lab\Fizika.cpp(35,6): warning C4804: '<': unsafe use of type 'bool' in operation
+  MyForm.cpp
+E:\Project of VS\Grafik-lab\Grafik_lab\Fizika.h(52,24): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+E:\Project of VS\Grafik-lab\Grafik_lab\MyForm.h(249,23): warning C4018: '<=': signed/unsigned mismatch
+E:\Project of VS\Grafik-lab\Grafik_lab\MyForm.h(307,23): warning C4018: '<=': signed/unsigned mismatch
+  Generating Code...
+  Fizika.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
+  Grafik_lab.vcxproj -> E:\Project of VS\Grafik-lab\Release\Grafik_lab.exe

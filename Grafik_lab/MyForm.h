@@ -46,6 +46,7 @@ namespace Grafiklab {
 	private: System::Windows::Forms::ToolStrip^ toolStrip1;
 	private: System::Windows::Forms::ToolStripButton^ toolStripButton1;
 	private: System::Windows::Forms::ToolStripButton^ toolStripButton2;
+	private: System::Windows::Forms::Button^ button3;
 
 
 	private:
@@ -61,9 +62,9 @@ namespace Grafiklab {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea3 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
-			System::Windows::Forms::DataVisualization::Charting::Legend^ legend3 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
-			System::Windows::Forms::DataVisualization::Charting::Series^ series3 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea1 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
+			System::Windows::Forms::DataVisualization::Charting::Legend^ legend1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
 			this->chart1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
@@ -73,6 +74,7 @@ namespace Grafiklab {
 			this->toolStrip1 = (gcnew System::Windows::Forms::ToolStrip());
 			this->toolStripButton1 = (gcnew System::Windows::Forms::ToolStripButton());
 			this->toolStripButton2 = (gcnew System::Windows::Forms::ToolStripButton());
+			this->button3 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart1))->BeginInit();
 			this->groupBox1->SuspendLayout();
 			this->toolStrip1->SuspendLayout();
@@ -83,17 +85,17 @@ namespace Grafiklab {
 			this->chart1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
-			chartArea3->Name = L"ChartArea1";
-			this->chart1->ChartAreas->Add(chartArea3);
-			legend3->Name = L"Legend1";
-			this->chart1->Legends->Add(legend3);
+			chartArea1->Name = L"ChartArea1";
+			this->chart1->ChartAreas->Add(chartArea1);
+			legend1->Name = L"Legend1";
+			this->chart1->Legends->Add(legend1);
 			this->chart1->Location = System::Drawing::Point(12, 36);
 			this->chart1->Name = L"chart1";
-			series3->ChartArea = L"ChartArea1";
-			series3->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Spline;
-			series3->Legend = L"Legend1";
-			series3->Name = L"Grafik";
-			this->chart1->Series->Add(series3);
+			series1->ChartArea = L"ChartArea1";
+			series1->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Spline;
+			series1->Legend = L"Legend1";
+			series1->Name = L"Grafik";
+			this->chart1->Series->Add(series1);
 			this->chart1->Size = System::Drawing::Size(1046, 577);
 			this->chart1->TabIndex = 0;
 			this->chart1->Text = L"chart1";
@@ -152,7 +154,7 @@ namespace Grafiklab {
 			});
 			this->toolStrip1->Location = System::Drawing::Point(0, 0);
 			this->toolStrip1->Name = L"toolStrip1";
-			this->toolStrip1->Size = System::Drawing::Size(2024, 57);
+			this->toolStrip1->Size = System::Drawing::Size(1349, 33);
 			this->toolStrip1->TabIndex = 2;
 			this->toolStrip1->Text = L"toolStrip1";
 			// 
@@ -162,7 +164,7 @@ namespace Grafiklab {
 			this->toolStripButton1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"toolStripButton1.Image")));
 			this->toolStripButton1->ImageTransparentColor = System::Drawing::Color::Magenta;
 			this->toolStripButton1->Name = L"toolStripButton1";
-			this->toolStripButton1->Size = System::Drawing::Size(34, 52);
+			this->toolStripButton1->Size = System::Drawing::Size(34, 28);
 			this->toolStripButton1->Text = L"toolStripButton1";
 			this->toolStripButton1->Click += gcnew System::EventHandler(this, &MyForm::toolStripButton1_Click_1);
 			// 
@@ -176,11 +178,22 @@ namespace Grafiklab {
 			this->toolStripButton2->Text = L"toolStripButton2";
 			this->toolStripButton2->Click += gcnew System::EventHandler(this, &MyForm::toolStripButton2_Click);
 			// 
+			// button3
+			// 
+			this->button3->Location = System::Drawing::Point(1076, 333);
+			this->button3->Name = L"button3";
+			this->button3->Size = System::Drawing::Size(192, 61);
+			this->button3->TabIndex = 3;
+			this->button3->Text = L"On/Off error";
+			this->button3->UseVisualStyleBackColor = true;
+			this->button3->Click += gcnew System::EventHandler(this, &MyForm::button3_Click);
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1349, 618);
+			this->Controls->Add(this->button3);
 			this->Controls->Add(this->groupBox1);
 			this->Controls->Add(this->toolStrip1);
 			this->Controls->Add(this->chart1);
@@ -200,17 +213,19 @@ namespace Grafiklab {
 
 		typedef Phizics::Fizika Phiz;
 
-		const int T_max = 5; // numbers of periods
+		const int T_max = 5; // amount of periods
+
+		bool error = false;
 
 	private: System::Void chart1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 
-	float error_time(float k) {
-		float end = (k * 1000) * 0.3;
-		float start = (k * 1000) * 0.05;
-		int result = (std::rand() % (int(end) - int(start)) + int(start));
-		return /*k +*/ result / 1000.0;
-	}
+	//float error_time(float k) {
+	//	float end = (k * 1000) * 0.3;
+	//	float start = (k * 1000) * 0.05;
+	//	int result = (std::rand() % (int(end) - int(start)) + int(start));
+	//	return /*k +*/ result / 1000.0;
+	//}
 
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 	chart1->Series["Grafik"]->Points->Clear(); //Series 1
@@ -225,20 +240,20 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 
 #ifdef DEBUG_XY
 	std::cout << "Variant 1" << std::endl;
-	std::cout << "X\tY\t\tError\n";
+	std::cout << "X_\tX\tY\t\tError\n";
 #endif // DEBUG_XY
 
 
-	float k{};
-	float k_{};
-	for (size_t i = 1; i <= T_max; i++) { //number of periods(5)
+	double k{};
+	double k_{};
+	for (size_t i = 1; i <= T_max; i++) { //amount of periods(5)
 
-		for (k; k < 0.1 * i; k += float(0.02)) {
+		for (k; k < 0.1 * i; k += 0.02) {
 
-#ifdef time_error
-			if (k)
-				k_ = error_time(k);
-#endif // time_error
+//#ifdef time_error
+			if (error && k)
+				k_ = Phizics::Fizika::error_time(k);
+//#endif // time_error
 
 			obj.for_rand();
 			obj.set_t(T_max * k+k_);
@@ -249,7 +264,7 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 			chart1->Series["Grafik"]->Points->AddXY(k+k_, y);
 
 #ifdef DEBUG_XY
-			std::cout << k+k_ << "\t" << y<< std::setw(4) <<"\t" << k_ << std::endl;
+			std::cout <<k << '\t' << k+k_ << "\t" << y<< std::setw(4) <<"\t" << k_ << std::endl;
 #endif // DEBUG_XY
 
 		}
@@ -286,18 +301,22 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 
 	chart1->Series["Grafik"];
 
-	float k{};
+	double k{};
+	double k_{};
 
 	for (size_t i = 1; i <= T_max; i++) { //number of periods(5)
 
-		for (k; k < 0.1 * i; k += float(0.02)) {
+		for (k; k < 0.1 * i; k += double(0.02)) {
 			obj.for_rand();
 			obj.set_t(T_max * k);
 			obj.set_code(Phiz::TASK_2);
 
+			if (error && k)
+				k_ = Phizics::Fizika::error_time(k);
+
 			double y = obj.Y_U_calc();
 
-			chart1->Series["Grafik"]->Points->AddXY(k, y);
+			chart1->Series["Grafik"]->Points->AddXY(k+k_, y);
 
 #ifdef DEBUG_XY
 			std::cout << k << "\t" << y << std::endl;
@@ -324,6 +343,14 @@ private: System::Void toolStripButton1_Click_1(System::Object^ sender, System::E
 }
 private: System::Void toolStripButton2_Click(System::Object^ sender, System::EventArgs^ e) {
 	MyForm::Close();
+}
+private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (!error) {
+		error = true;
+		return;
+	}
+	error = false;
+//#define time_error
 }
 };
 }
